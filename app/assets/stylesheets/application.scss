@@ -14,3 +14,27 @@
  *= require_self
  */
 @import "bootstrap";
+
+.bg-off-white {
+  background-color: #eee;
+}
+
+.vh-50 {
+  height: 50vh;
+}
+
+.form-control {
+  &:focus {
+    border-color: red;
+    box-shadow: 0 0 5px red;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: red;
+
+  &:hover {
+    color: darken(red, 10%);
+  }
+}

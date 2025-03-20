@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "home#index"
   resources :games
+
+  namespace :admin do
+    root "admin#index"
+  end
 end

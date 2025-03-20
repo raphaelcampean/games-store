@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - MeuApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "admin", media: "all" %>
+  <%= javascript_include_tag "admin", defer: true %>
+</head>
+<body>
+  <div class="admin-header">
+    <h1>Painel Administrativo</h1>
+    <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+  </div>
+
+  <div class="admin-container">
+    <%= yield %>
+  </div>
+
+  <footer class="admin-footer">
+    <p>© 2025 Admin - MeuApp</p>
+  </footer>
+</body>
+</html>

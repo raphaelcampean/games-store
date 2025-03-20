@@ -10,8 +10,9 @@
       <nav class="w-100">
         <ul class="list-group list-group-horizontal d-flex justify-content-end">
           <% if user_signed_in? %>
-            <li class="list-group"><a href="/games" class="text-white">Games</a></li>
-            <li class="list-group ms-2"><a href="/games/new" class="text-white">New Game</a></li>
+            <% if current_user.admin? %>
+              <li class="list-group ms-2"><a href="<%= admin_root_path %>" class="text-white">Área Administrativa</a></li>
+            <% end %>
             <%= link_to "Sair", destroy_user_session_path, data: { turbo_method: :delete }, class: "list-group ms-2 text-white" %>
           <% else %>
             <li class="list-group ms-2"><a href="<%= new_user_session_path %>" class="text-white">Login</a></li>

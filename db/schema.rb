@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_20_131421) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_20_160456) do
   create_table "developers", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_131421) do
     t.bigint "genre_id", null: false
     t.bigint "platform_id", null: false
     t.bigint "developer_id", null: false
+    t.integer "quantity"
     t.index ["developer_id"], name: "index_games_on_developer_id"
     t.index ["genre_id"], name: "index_games_on_genre_id"
     t.index ["platform_id"], name: "index_games_on_platform_id"
@@ -60,6 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_131421) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

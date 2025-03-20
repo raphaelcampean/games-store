@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Game Store</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Desenvolvedora</th>
+        <th>Ano</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @games.each do |game| %>
+        <tr>
+          <td><%= game.title %></td>
+          <td><%= game.description %></td>
+          <td><%= game.price %></td>
+          <td><%= game.developer %></td>
+          <td><%= game.year %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
